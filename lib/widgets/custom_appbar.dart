@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           vertical: 10,
         ),
         child: Text(
-          'Pocket Lencer',
+          title,
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,
@@ -33,7 +33,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         ),
       ),
       iconTheme: IconThemeData(color: Colors.black),
-      actions: [IconButton(onPressed: () {}, icon: Icon(Icons.favorite))],
+      actions: [
+        IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/wishlist');
+            },
+            icon: Icon(Icons.favorite))
+      ],
     );
   }
 

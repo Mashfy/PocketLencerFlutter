@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pocket_lencer/screens/home/home_screen.dart';
+import 'package:pocket_lencer/screens/screens.dart';
 
 // ignore_for_file: avoid_print
 // ignore_for_file: no_duplicate_case_values
@@ -15,6 +16,14 @@ class AppRouter {
 
       case HomeScreen.routeName:
         return HomeScreen.route();
+      case CartScreen.routeName:
+        return CartScreen.route();
+      case ProductScreen.routeName:
+        return ProductScreen.route();
+      case WishListScreen.routeName:
+        return WishListScreen.route();
+      case CatalogScreen.routeName:
+        return CatalogScreen.route();
 
       default:
         return _errorRoute();
