@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pocket_lencer/config/app_router.dart';
 import 'package:pocket_lencer/screens/screens.dart';
 
+import 'config/theme.dart';
+
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: sized_box_for_whitespace
 // ignore_for_file: use_key_in_widget_constructors
@@ -14,9 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Zero to unicorn',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: theme(),
       onGenerateRoute: AppRouter.onGenerateRoute,
       initialRoute: HomeScreen.routeName,
     );
