@@ -6,6 +6,8 @@ import 'package:pocket_lencer/widgets/widgets.dart';
 // ignore_for_file: sized_box_for_whitespace
 // ignore_for_file: use_key_in_widget_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: avoid_unnecessary_containers
+
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/';
 
@@ -73,11 +75,10 @@ class HomeScreen extends StatelessWidget {
       body: Container(
           child: CarouselSlider(
         options: CarouselOptions(
-          aspectRatio: 2.0,
+          aspectRatio: 1.5,
+          viewportFraction: 0.9,
           enlargeCenterPage: true,
-          enableInfiniteScroll: false,
-          initialPage: 2,
-          autoPlay: true,
+          enlargeStrategy: CenterPageEnlargeStrategy.height,
         ),
         items: imageSliders,
       )),
