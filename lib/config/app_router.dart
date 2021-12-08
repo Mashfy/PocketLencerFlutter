@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pocket_lencer/models/category_model.dart';
 import 'package:pocket_lencer/screens/home/home_screen.dart';
 import 'package:pocket_lencer/screens/screens.dart';
 
@@ -23,7 +24,7 @@ class AppRouter {
       case WishListScreen.routeName:
         return WishListScreen.route();
       case CatalogScreen.routeName:
-        return CatalogScreen.route();
+        return CatalogScreen.route(category: settings.arguments as Category);
 
       default:
         return _errorRoute();

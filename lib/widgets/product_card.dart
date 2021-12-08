@@ -5,10 +5,12 @@ import 'package:pocket_lencer/models/models.dart';
 // ignore_for_file: prefer_const_constructors
 class ProductCard extends StatelessWidget {
   final Product product;
+  final double widthFactor;
 
   const ProductCard({
     Key? key,
     required this.product,
+    this.widthFactor = 2.5,
   }) : super(key: key);
 
   @override

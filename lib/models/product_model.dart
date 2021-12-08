@@ -57,6 +57,15 @@ class Product extends Equatable {
       isPopular: true,
     ),
     Product(
+      name: 'Digital Photography',
+      category: 'Art Work',
+      imageUrl:
+          'https://github.com/Mashfy/Graphics-Design/blob/master/Digital%20Photography/klause.jpg?raw=true',
+      price: 350,
+      isDiscounted: true,
+      isPopular: false,
+    ),
+    Product(
       name: 'Logo',
       category: 'Vector Art',
       imageUrl:
@@ -75,12 +84,30 @@ class Product extends Equatable {
       isPopular: true,
     ),
     Product(
+      name: 'Website svg',
+      category: 'Vector Art',
+      imageUrl:
+          'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/Home%20Quarantine%20music.png?raw=true',
+      price: 1500,
+      isDiscounted: true,
+      isPopular: true,
+    ),
+    Product(
       name: 'Game Character',
       category: 'Character Design',
       imageUrl:
-          'https://github.com/Mashfy/Graphics-Design/blob/master/logo/GamingParadise.png?raw=true',
+          'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/breaking%20bad.png?raw=true',
       price: 1200,
       isDiscounted: true,
+      isPopular: true,
+    ),
+    Product(
+      name: 'Movie Tv Series Character',
+      category: 'Character Design',
+      imageUrl:
+          'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/WallE.png?raw=true',
+      price: 1200,
+      isDiscounted: false,
       isPopular: true,
     ),
   ];
