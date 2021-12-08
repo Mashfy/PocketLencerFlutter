@@ -19,7 +19,7 @@ class Category extends Equatable {
         imageUrl:
             'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/AloneIn2050.png?raw=true'),
     Category(
-        name: 'Logo',
+        name: 'Vector Art',
         imageUrl:
             'https://github.com/Mashfy/Graphics-Design/blob/master/logo/Zakhrifat.png?raw=true'),
     Category(
