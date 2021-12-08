@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_lencer/models/category_model.dart';
+import 'package:pocket_lencer/models/models.dart';
 
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: sized_box_for_whitespace
 // ignore_for_file: use_key_in_widget_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 // ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: unnecessary_this
 class HeroCarouselCard extends StatelessWidget {
-  final Category category;
+  final Category? category;
+  final Product? product;
+
   const HeroCarouselCard({
-    required this.category,
+    this.category,
+    this.product,
   });
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          '/catalog',
-          arguments: category,
-        );
+        if (this.product == null) {
+          Navigator.pushNamed(
+            context,
+            '/catalog',
+            arguments: category,
+          );
+        }
       },
       child: Container(
         margin: EdgeInsets.symmetric(
@@ -31,7 +38,7 @@ class HeroCarouselCard extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Image.network(
-                category.imageUrl,
+                product == null ? category!.imageUrl : product!.imageUrl,
                 fit: BoxFit.cover,
                 width: 1000.0,
               ),
@@ -53,7 +60,7 @@ class HeroCarouselCard extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   child: Text(
-                    category.name,
+                    product == null ? category!.name : '',
                     style: Theme.of(context).textTheme.headline2!.copyWith(
                           color: Colors.white,
                         ),
