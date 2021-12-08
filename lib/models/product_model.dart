@@ -33,7 +33,7 @@ class Product extends Equatable {
       name: 'Portrait',
       category: 'Art Work',
       imageUrl:
-          'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/bojack%20horseman.png?raw=true',
+          'https://github.com/Mashfy/Graphics-Design/blob/master/logo/MyOfficialLogo.png?raw=true',
       price: 300,
       isDiscounted: true,
       isPopular: false,
@@ -51,7 +51,7 @@ class Product extends Equatable {
       name: 'Raster Painting',
       category: 'Art Work',
       imageUrl:
-          'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/bojack%20horseman.png?raw=true',
+          'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/ElClasico.png?raw=true',
       price: 350,
       isDiscounted: true,
       isPopular: true,
@@ -72,7 +72,16 @@ class Product extends Equatable {
           'https://github.com/Mashfy/Graphics-Design/blob/master/logo/GamingParadise.png?raw=true',
       price: 900,
       isDiscounted: false,
-      isPopular: false,
+      isPopular: true,
+    ),
+    Product(
+      name: 'Game Character',
+      category: 'Character Design',
+      imageUrl:
+          'https://github.com/Mashfy/Graphics-Design/blob/master/logo/GamingParadise.png?raw=true',
+      price: 1200,
+      isDiscounted: true,
+      isPopular: true,
     ),
   ];
 }

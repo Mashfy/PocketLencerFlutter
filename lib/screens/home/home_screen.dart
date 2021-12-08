@@ -41,10 +41,15 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SectionTitle(title: "DISCOUNTED PACKAGES"),
-          // product
-          ProductCard(
-            product: Product.products[0],
-          )
+          ProductCarousel(
+              products: Product.products
+                  .where((product) => product.isDiscounted)
+                  .toList()),
+          SectionTitle(title: "POPULAR PACKAGES"),
+          ProductCarousel(
+              products: Product.products
+                  .where((product) => product.isPopular)
+                  .toList()),
         ],
       ),
     );

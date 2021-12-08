@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_lencer/models/models.dart';
 
+// ignore_for_file: sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors
 class ProductCard extends StatelessWidget {
   final Product product;
 
@@ -17,7 +19,7 @@ class ProductCard extends StatelessWidget {
           width: MediaQuery.of(context).size.width / 2.5,
           height: 150,
           child: Image.network(
-            Product.products[0].imageUrl,
+            product.imageUrl,
             fit: BoxFit.cover,
           ),
         ),
@@ -51,14 +53,14 @@ class ProductCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          Product.products[0].name,
+                          product.name,
                           style:
                               Theme.of(context).textTheme.headline5!.copyWith(
                                     color: Colors.white,
                                   ),
                         ),
                         Text(
-                          'Tk ${Product.products[0].price}',
+                          'Tk ${product.price}',
                           style:
                               Theme.of(context).textTheme.headline6!.copyWith(
                                     color: Colors.white,
