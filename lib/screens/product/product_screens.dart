@@ -24,7 +24,38 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: product.name),
-      bottomNavigationBar: CustomNavBar(),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.black,
+        child: Container(
+          height: 70,
+          child: Row(
+            children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.share,
+                    color: Colors.white,
+                  )),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.favorite,
+                  color: Colors.white,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'ADD TO CART',
+                  style: Theme.of(context).textTheme.headline3!.copyWith(
+                        color: Colors.white,
+                      ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       body: ListView(
         children: [
           CarouselSlider(
@@ -90,7 +121,22 @@ class ProductScreen extends StatelessWidget {
               children: [
                 ListTile(
                   title: Text(
-                    'description',
+                    'High quality submission with 2 revisions.',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: ExpansionTile(
+              title: Text('Delivery Information',
+                  style: Theme.of(context).textTheme.headline3),
+              children: [
+                ListTile(
+                  title: Text(
+                    'You will be provided high quality submission via your mail.',
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ),
