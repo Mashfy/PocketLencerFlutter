@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pocket_lencer/blocs/wishlist/wishlist_bloc.dart';
 import 'package:pocket_lencer/config/app_router.dart';
 import 'package:pocket_lencer/screens/screens.dart';
 
@@ -14,11 +16,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Zero to unicorn',
-      theme: theme(),
-      onGenerateRoute: AppRouter.onGenerateRoute,
-      initialRoute: HomeScreen.routeName,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => WishlistBloc()..add(StartWishlist())),
+      ],
+      child: MaterialApp(
+        title: 'Zero to unicorn',
+        theme: theme(),
+        onGenerateRoute: AppRouter.onGenerateRoute,
+        initialRoute: HomeScreen.routeName,
+      ),
     );
   }
 }
