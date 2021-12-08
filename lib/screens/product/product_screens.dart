@@ -29,6 +29,7 @@ class ProductScreen extends StatelessWidget {
         child: Container(
           height: 70,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               IconButton(
                   onPressed: () {},
@@ -44,13 +45,10 @@ class ProductScreen extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.white),
                 onPressed: () {},
-                child: Text(
-                  'ADD TO CART',
-                  style: Theme.of(context).textTheme.headline3!.copyWith(
-                        color: Colors.white,
-                      ),
-                ),
+                child: Text('ADD TO CART',
+                    style: Theme.of(context).textTheme.headline3!),
               )
             ],
           ),
