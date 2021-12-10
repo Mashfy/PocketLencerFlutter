@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         title: 'Zero to unicorn',
         theme: theme(),
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: HomeScreen.routeName,
+        initialRoute: SplashScreen.routeName,
       ),
     );
   }
