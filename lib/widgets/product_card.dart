@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pocket_lencer/blocs/bloc/cart_bloc.dart';
 import 'package:pocket_lencer/models/models.dart';
 
 // ignore_for_file: sized_box_for_whitespace
@@ -86,12 +88,29 @@ class ProductCard extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Expanded(
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.add_circle),
-                        color: Colors.white,
-                      ),
+                    BlocBuilder<CartBloc, CartState>(
+                      builder: (context, state) {
+                        if (state is CartLoading) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (state is CartLoaded) {
+                          return Expanded(
+                            child: IconButton(
+                              onPressed: () {
+                                context
+                                    .read<CartBloc>()
+                                    .add(CartProductAdded(product));
+                              },
+                              icon: Icon(Icons.add_circle),
+                              color: Colors.white,
+                            ),
+                          );
+                        } else {
+                          return Text('Something went wrong');
+                        }
+                      },
                     ),
                     isWishList
                         ? Expanded(

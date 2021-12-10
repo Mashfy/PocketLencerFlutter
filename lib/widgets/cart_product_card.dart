@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pocket_lencer/blocs/bloc/cart_bloc.dart';
 import 'package:pocket_lencer/models/models.dart';
 
 // ignore_for_file: prefer_const_constructors
@@ -37,16 +39,33 @@ class CartProductCard extends StatelessWidget {
               ],
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.remove_circle),
+          SizedBox(width: 10),
+          BlocBuilder<CartBloc, CartState>(
+            builder: (context, state) {
+              return Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      context.read<CartBloc>().add(
+                            CartProductRemoved(product),
+                          );
+                    },
+                    icon: Icon(Icons.remove_circle),
+                  ),
+                ],
+              );
+            },
           ),
           Text(
             '1',
             style: Theme.of(context).textTheme.headline5,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.read<CartBloc>().add(
+                    CartProductAdded(product),
+                  );
+            },
             icon: Icon(Icons.add_circle),
           ),
         ],
