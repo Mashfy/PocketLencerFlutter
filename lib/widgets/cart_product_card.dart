@@ -6,10 +6,12 @@ import 'package:pocket_lencer/models/models.dart';
 // ignore_for_file: prefer_const_constructors
 class CartProductCard extends StatelessWidget {
   final Product product;
+  final int quantity;
 
   const CartProductCard({
     Key? key,
     required this.product,
+    required this.quantity,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -52,21 +54,21 @@ class CartProductCard extends StatelessWidget {
                     },
                     icon: Icon(Icons.remove_circle),
                   ),
+                  Text(
+                    '$quantity',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      context.read<CartBloc>().add(
+                            CartProductAdded(product),
+                          );
+                    },
+                    icon: Icon(Icons.add_circle),
+                  ),
                 ],
               );
             },
-          ),
-          Text(
-            '1',
-            style: Theme.of(context).textTheme.headline5,
-          ),
-          IconButton(
-            onPressed: () {
-              context.read<CartBloc>().add(
-                    CartProductAdded(product),
-                  );
-            },
-            icon: Icon(Icons.add_circle),
           ),
         ],
       ),
