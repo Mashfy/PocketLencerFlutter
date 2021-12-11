@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:pocket_lencer/blocs/wishlist/wishlist_bloc.dart';
 import 'package:pocket_lencer/models/cart_model.dart';
-import 'package:pocket_lencer/models/models.dart';
+import 'package:pocket_lencer/models/product_model.dart';
 
 // ignore_for_file: prefer_const_constructors
+// ignore_for_file: override_on_non_overriding_member
 
 part 'cart_event.dart';
 part 'cart_state.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pocket_lencer/blocs/bloc/cart_bloc.dart';
+import 'package:pocket_lencer/blocs/cart/cart_bloc.dart';
 import 'package:pocket_lencer/models/models.dart';
 
 // ignore_for_file: prefer_const_constructors

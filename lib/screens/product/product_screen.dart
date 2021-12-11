@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pocket_lencer/blocs/bloc/cart_bloc.dart';
+import 'package:pocket_lencer/blocs/cart/cart_bloc.dart';
 import 'package:pocket_lencer/blocs/wishlist/wishlist_bloc.dart';
 import 'package:pocket_lencer/models/models.dart';
 import 'package:pocket_lencer/widgets/widgets.dart';
