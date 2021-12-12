@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pocket_lencer/blocs/cart/cart_bloc.dart';
+import 'package:pocket_lencer/blocs/category/category_bloc.dart';
 import 'package:pocket_lencer/blocs/wishlist/wishlist_bloc.dart';
 import 'package:pocket_lencer/config/app_router.dart';
+import 'package:pocket_lencer/repositories/category/category_repository.dart';
 import 'package:pocket_lencer/screens/screens.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -24,6 +26,10 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => CartBloc()..add(CartStarted())),
         BlocProvider(create: (_) => WishlistBloc()..add(StartWishlist())),
+        BlocProvider(
+          create: (_) => CategoryBloc(categoryRepository: CategoryRepository())
+            ..add(LoadCategories()),
+        )
       ],
       child: MaterialApp(
         title: 'Zero to unicorn',
