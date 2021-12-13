@@ -4,13 +4,12 @@
 
 <br/>
 
-<h2>Motivation</h2> <h3>I have great interests in digital art and illustrations.See this [repo](https://github.com/Mashfy/Graphics-Design.git) to see some samples of my artworks. So, I wanted to create my own mobile app which will showcase my artworks to interested people.</h3>
+<h2>Motivation</h2> I have great interests in digital art and illustrations.See this [repo](https://github.com/Mashfy/Graphics-Design.git) to see some samples of my artworks. So, I wanted to create my own mobile app which will showcase my artworks to interested people.
 
 <!-- ![App Preview](https://github.com/Mashfy/PocketLencerFlutter/blob/main/assets/images/Screenshot_1639408843.png?raw=true) -->
 <br/>
 
 <h2>Features Implemented</h2>
-<h3>
 <ul>
 <li>A Responsive UI for Users</li>
 <li>Catagorical Sort of Art works</li>
@@ -20,17 +19,14 @@
 <li>Adding favorite artwork in your wishlist</li>
 <li>Simple client information checkout</li>
 <ul>
-</h3>
 <br/>
 
 <h2>Used Technologies:</h2>
-<h3>
 <ul>
 <li>software development kit (SDK): <b>Flutter</b></li>
 <li>Language: <b>Dart</b></li>
 <li>Database: <b>Firebase</b></li>
 </ul>
-</h3>
 <br/>
 <h2>To run the project in your machine</h2>
 
@@ -75,3 +71,5 @@ flutter run
   <img src="staticImg/Screenshot_8.png" width="250" />
   <img src="staticImg/Screenshot_9.png" width="250" />
 </p>
+
+<br/>
