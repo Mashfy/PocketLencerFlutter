@@ -96,7 +96,7 @@ class Product extends Equatable {
       isPopular: false,
     ),
     Product(
-      name: 'Loner with his companion',
+      name: 'Loner',
       category: 'Photography',
       imageUrl:
           'https://github.com/Mashfy/Graphics-Design/blob/master/Photography/IMG_20200923_123029%20(2).jpg?raw=true',
@@ -105,7 +105,7 @@ class Product extends Equatable {
       isPopular: false,
     ),
     Product(
-      name: 'Sheer joy sunset',
+      name: 'Sheer joy',
       category: 'Photography',
       imageUrl:
           'https://github.com/Mashfy/Graphics-Design/blob/master/Photography/1604323353657%20(4).jpg?raw=true',

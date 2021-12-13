@@ -91,7 +91,7 @@ class ProductScreen extends StatelessWidget {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+                        'Print size: 18x24\nPrint Quality: 170gsm Silk\nDigital copy: unavailable;',
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
                     )
@@ -105,7 +105,7 @@ class ProductScreen extends StatelessWidget {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+                        'Will be delivered at your door steps.',
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
                     )
