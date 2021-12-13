@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:pocket_lencer/models/category_model.dart';
+import 'package:pocket_lencer/models/models.dart';
 import 'package:pocket_lencer/repositories/category/category_repository.dart';
 
 part 'category_event.dart';
@@ -16,6 +16,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
       : _categoryRepository = categoryRepository,
         super(CategoryLoading());
 
+  @override
   Stream<CategoryState> mapEventToState(
     CategoryEvent event,
   ) async* {

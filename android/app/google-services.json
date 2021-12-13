@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "455570876258",
-    "project_id": "flutter-pocketlencer-app",
-    "storage_bucket": "flutter-pocketlencer-app.appspot.com"
+    "project_number": "373196941343",
+    "project_id": "flutter-pocketlencer",
+    "storage_bucket": "flutter-pocketlencer.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:455570876258:android:8752e95d453c95c895ae3b",
+        "mobilesdk_app_id": "1:373196941343:android:cee98f14c7a8636f058d2a",
         "android_client_info": {
           "package_name": "com.example.pocket_lencer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "455570876258-9868f1b0af03bce0p7e9i1k96gnpb9hg.apps.googleusercontent.com",
+          "client_id": "373196941343-efb6447tgoq6au349ha42bdk00l3q0a1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCOLlLN6apfZGjc8OER9fE1gwRj3Pfm2YQ"
+          "current_key": "AIzaSyCUqUCV8V1261XBKfhcABXHKFFV3CkIJJY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "455570876258-9868f1b0af03bce0p7e9i1k96gnpb9hg.apps.googleusercontent.com",
+              "client_id": "373196941343-efb6447tgoq6au349ha42bdk00l3q0a1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

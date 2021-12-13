@@ -5,8 +5,9 @@ import 'package:pocket_lencer/repositories/category/base_category_repository.dar
 class CategoryRepository extends BaseCategoryRepository {
   final FirebaseFirestore _firebaseFirestore;
 
-  CategoryRepository({FirebaseFirestore? firebaseFirestore})
-      : _firebaseFirestore = firebaseFirestore ?? FirebaseFirestore.instance;
+  CategoryRepository({
+    FirebaseFirestore? firebaseFirestore,
+  }) : _firebaseFirestore = firebaseFirestore ?? FirebaseFirestore.instance;
 
   @override
   Stream<List<Category>> getAllCategories() {

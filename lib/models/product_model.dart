@@ -15,8 +15,8 @@ class Product extends Equatable {
     required this.category,
     required this.imageUrl,
     required this.price,
-    required this.isPopular,
     required this.isDiscounted,
+    required this.isPopular,
   });
 
   static Product fromSnapshot(DocumentSnapshot snap) {
@@ -37,8 +37,8 @@ class Product extends Equatable {
         category,
         imageUrl,
         price,
-        isPopular,
         isDiscounted,
+        isPopular,
       ];
 
   static List<Product> products = [

@@ -25,18 +25,18 @@ class Category extends Equatable {
     return category;
   }
 
-  // static List<Category> categories = [
-  //   Category(
-  //       name: 'Art Work',
-  //       imageUrl:
-  //           'https://github.com/Mashfy/Graphics-Design/blob/master/logo/me.png?raw=true'),
-  //   Category(
-  //       name: 'Photography',
-  //       imageUrl:
-  //           'https://github.com/Mashfy/Graphics-Design/blob/master/Photography/IMG_20210530_180600.jpg?raw=true'),
-  //   Category(
-  //       name: 'Character Design Art',
-  //       imageUrl:
-  //           'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/AloneIn2050.png?raw=true'),
-  // ];
+  static List<Category> categories = [
+    Category(
+        name: 'Art Work',
+        imageUrl:
+            'https://github.com/Mashfy/Graphics-Design/blob/master/logo/me.png?raw=true'),
+    Category(
+        name: 'Photography',
+        imageUrl:
+            'https://github.com/Mashfy/Graphics-Design/blob/master/Photography/IMG_20210530_180600.jpg?raw=true'),
+    Category(
+        name: 'Character Design Art',
+        imageUrl:
+            'https://github.com/Mashfy/Graphics-Design/blob/master/artworks/AloneIn2050.png?raw=true'),
+  ];
 }
