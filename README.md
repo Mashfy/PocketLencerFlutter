@@ -18,9 +18,8 @@
 <li>Adding in cart</li>
 <li>Adding favorite artwork in your wishlist</li>
 <li>Simple client information checkout</li>
-<ul>
-<br/>
-<br/>
+</ul>
+</br>
 <h3>Used Technologies:</h3>
 <ul>
 <li>software development kit (SDK): <b>Flutter</b></li>
