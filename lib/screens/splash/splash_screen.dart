@@ -1,24 +1,20 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-// ignore_for_file: prefer_const_constructors
-// ignore_for_file: sized_box_for_whitespace
-// ignore_for_file: use_key_in_widget_constructors
-// ignore_for_file: unused_local_variable
 class SplashScreen extends StatelessWidget {
   static const String routeName = '/splash';
 
   static Route route() {
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
-      builder: (_) => SplashScreen(),
+      builder: (context) => SplashScreen(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 3), () => Navigator.pushNamed(context, '/'));
+    Timer(Duration(seconds: 2), () => Navigator.pushNamed(context, '/'));
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -30,19 +26,18 @@ class SplashScreen extends StatelessWidget {
               height: 300,
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           Container(
             color: Colors.black,
             padding: const EdgeInsets.symmetric(
               vertical: 10,
-              horizontal: 25,
+              horizontal: 20,
             ),
             child: Text(
-              'POCKET LENCER',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline2!
-                  .copyWith(color: Colors.white),
+              'Pocket Lencer',
+              style: Theme.of(context).textTheme.headline2!.copyWith(
+                    color: Colors.white,
+                  ),
             ),
           )
         ],

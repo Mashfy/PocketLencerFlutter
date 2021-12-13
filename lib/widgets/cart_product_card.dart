@@ -3,27 +3,28 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pocket_lencer/blocs/cart/cart_bloc.dart';
 import 'package:pocket_lencer/models/models.dart';
 
-// ignore_for_file: prefer_const_constructors
 class CartProductCard extends StatelessWidget {
-  final Product product;
-  final int quantity;
-
   const CartProductCard({
     Key? key,
     required this.product,
     required this.quantity,
   }) : super(key: key);
+
+  final Product product;
+  final int quantity;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.network(
             product.imageUrl,
+            fit: BoxFit.cover,
             width: 100,
             height: 80,
-            fit: BoxFit.cover,
           ),
           SizedBox(width: 10),
           Expanded(
@@ -35,7 +36,7 @@ class CartProductCard extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline5,
                 ),
                 Text(
-                  '\TK${product.price}',
+                  '\$${product.price}',
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ],
@@ -44,30 +45,36 @@ class CartProductCard extends StatelessWidget {
           SizedBox(width: 10),
           BlocBuilder<CartBloc, CartState>(
             builder: (context, state) {
-              return Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      context.read<CartBloc>().add(
-                            CartProductRemoved(product),
-                          );
-                    },
-                    icon: Icon(Icons.remove_circle),
-                  ),
-                  Text(
-                    '$quantity',
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      context.read<CartBloc>().add(
-                            CartProductAdded(product),
-                          );
-                    },
-                    icon: Icon(Icons.add_circle),
-                  ),
-                ],
-              );
+              if (state is CartLoading) {
+                return CircularProgressIndicator();
+              }
+              if (state is CartLoaded) {
+                return Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.remove_circle),
+                      onPressed: () {
+                        context.read<CartBloc>().add(
+                              CartProductRemoved(product),
+                            );
+                      },
+                    ),
+                    Text(
+                      '$quantity',
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.add_circle),
+                      onPressed: () {
+                        context.read<CartBloc>().add(
+                              CartProductAdded(product),
+                            );
+                      },
+                    ),
+                  ],
+                );
+              }
+              return Text('Something went wrong!');
             },
           ),
         ],

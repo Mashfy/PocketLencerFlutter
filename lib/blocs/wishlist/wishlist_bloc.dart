@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dart:async';
+
+import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:pocket_lencer/models/models.dart';
-import 'package:pocket_lencer/models/wishlist_model.dart';
 
 part 'wishlist_event.dart';
 part 'wishlist_state.dart';
@@ -14,25 +15,27 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
   Stream<WishlistState> mapEventToState(
     WishlistEvent event,
   ) async* {
-    if (event is StartWishlist) {
-      yield* _mapStartWishlistToState();
-    } else if (event is AddWishlistProduct) {
-      yield* _mapAddWishlistProductToState(event, state);
-    } else if (event is RemoveWishlistProduct) {
-      yield* _mapRemoveWishlistProductToState(event, state);
+    if (event is WishlistStarted) {
+      yield* _mapWishlistStartedToState();
+    } else if (event is WishlistProductAdded) {
+      yield* _mapWishlistProductAddedToState(event, state);
+    } else if (event is WishlistProductRemoved) {
+      yield* _mapWishlistProductRemovedToState(event, state);
     }
   }
 
-  Stream<WishlistState> _mapStartWishlistToState() async* {
+  Stream<WishlistState> _mapWishlistStartedToState() async* {
     yield WishlistLoading();
     try {
-      await Future<void>.delayed(Duration(seconds: 1));
+      await Future<void>.delayed(const Duration(seconds: 1));
       yield const WishlistLoaded();
-    } catch (_) {}
+    } catch (_) {
+      yield WishlistError();
+    }
   }
 
-  Stream<WishlistState> _mapAddWishlistProductToState(
-    AddWishlistProduct event,
+  Stream<WishlistState> _mapWishlistProductAddedToState(
+    WishlistProductAdded event,
     WishlistState state,
   ) async* {
     if (state is WishlistLoaded) {
@@ -42,12 +45,14 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
             products: List.from(state.wishlist.products)..add(event.product),
           ),
         );
-      } catch (_) {}
+      } on Exception {
+        yield WishlistError();
+      }
     }
   }
 
-  Stream<WishlistState> _mapRemoveWishlistProductToState(
-    RemoveWishlistProduct event,
+  Stream<WishlistState> _mapWishlistProductRemovedToState(
+    WishlistProductRemoved event,
     WishlistState state,
   ) async* {
     if (state is WishlistLoaded) {
@@ -57,7 +62,9 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
             products: List.from(state.wishlist.products)..remove(event.product),
           ),
         );
-      } catch (_) {}
+      } on Exception {
+        yield WishlistError();
+      }
     }
   }
 }

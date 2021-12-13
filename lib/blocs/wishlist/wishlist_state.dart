@@ -1,13 +1,14 @@
 part of 'wishlist_bloc.dart';
 
+@immutable
 abstract class WishlistState extends Equatable {
   const WishlistState();
+}
 
+class WishlistLoading extends WishlistState {
   @override
   List<Object> get props => [];
 }
-
-class WishlistLoading extends WishlistState {}
 
 class WishlistLoaded extends WishlistState {
   final Wishlist wishlist;
@@ -18,4 +19,7 @@ class WishlistLoaded extends WishlistState {
   List<Object> get props => [wishlist];
 }
 
-class WishlistError extends WishlistState {}
+class WishlistError extends WishlistState {
+  @override
+  List<Object> get props => [];
+}

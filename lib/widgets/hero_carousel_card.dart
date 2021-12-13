@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_lencer/models/category_model.dart';
 import 'package:pocket_lencer/models/models.dart';
 
-// ignore_for_file: prefer_const_constructors
-// ignore_for_file: sized_box_for_whitespace
-// ignore_for_file: use_key_in_widget_constructors
-// ignore_for_file: prefer_const_literals_to_create_immutables
-// ignore_for_file: avoid_unnecessary_containers
-// ignore_for_file: unnecessary_this
 class HeroCarouselCard extends StatelessWidget {
   final Category? category;
   final Product? product;
 
   const HeroCarouselCard({
+    Key? key,
     this.category,
     this.product,
-  });
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -29,46 +24,51 @@ class HeroCarouselCard extends StatelessWidget {
         }
       },
       child: Container(
-        margin: EdgeInsets.symmetric(
-          horizontal: 5.0,
-          vertical: 20,
+        padding: EdgeInsets.only(
+          left: 5,
+          right: 5,
+          top: 20.0,
+          bottom: 10.0,
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(5.0)),
-          child: Stack(
-            children: <Widget>[
-              Image.network(
-                product == null ? category!.imageUrl : product!.imageUrl,
-                fit: BoxFit.cover,
-                width: 1000.0,
-              ),
-              Positioned(
-                bottom: 0.0,
-                left: 0.0,
-                right: 0.0,
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color.fromARGB(200, 0, 0, 0),
-                        Color.fromARGB(0, 0, 0, 0)
-                      ],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
-                  ),
-                  padding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  child: Text(
-                    product == null ? category!.name : '',
-                    style: Theme.of(context).textTheme.headline2!.copyWith(
-                          color: Colors.white,
+        child: Stack(
+          children: <Widget>[
+            Image.network(
+              product == null ? category!.imageUrl : product!.imageUrl,
+              fit: BoxFit.cover,
+              width: 1000.0,
+            ),
+            this.product == null
+                ? Positioned(
+                    bottom: 0.0,
+                    left: 0.0,
+                    right: 0.0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color.fromARGB(200, 0, 0, 0),
+                            Color.fromARGB(0, 0, 0, 0)
+                          ],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
                         ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 10.0,
+                        horizontal: 20.0,
+                      ),
+                      child: Text(
+                        product == null ? category!.name : product!.name,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  )
+                : SizedBox(),
+          ],
         ),
       ),
     );

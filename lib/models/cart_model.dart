@@ -1,8 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:pocket_lencer/models/product_model.dart';
 
-// ignore_for_file: prefer_const_constructors
-// ignore_for_file: must_be_immutable
 class Cart extends Equatable {
   final List<Product> products;
 
@@ -21,6 +19,7 @@ class Cart extends Equatable {
         quantity[product] += 1;
       }
     });
+
     return quantity;
   }
 
@@ -28,10 +27,18 @@ class Cart extends Equatable {
       products.fold(0, (total, current) => total + current.price);
 
   double deliveryFee(subtotal) {
-    if (subtotal >= 1000.0) {
+    if (subtotal >= 30.0) {
       return 0.0;
+    } else
+      return 10.0;
+  }
+
+  String freeDelivery(subtotal) {
+    if (subtotal >= 30.0) {
+      return 'You have Free Delivery';
     } else {
-      return 120.0;
+      double missing = 30.0 - subtotal;
+      return 'Add \$${missing.toStringAsFixed(2)} for FREE Delivery';
     }
   }
 
@@ -39,17 +46,11 @@ class Cart extends Equatable {
     return subtotal + deliveryFee(subtotal);
   }
 
-  String freeDelivery(subtotal) {
-    if (subtotal >= 1000.0) {
-      return 'You have free delivery';
-    } else {
-      double missing = 1000.0 - subtotal;
-      return 'Add\$${missing.toStringAsFixed(2)} for free delivery';
-    }
-  }
+  String get deliveryFeeString => deliveryFee(subtotal).toStringAsFixed(2);
+
+  String get subtotalString => subtotal.toStringAsFixed(2);
 
   String get totalString => total(subtotal, deliveryFee).toStringAsFixed(2);
-  String get subtotalString => subtotal.toStringAsFixed(2);
-  String get deliveryFeeString => deliveryFee(subtotal).toStringAsFixed(2);
+
   String get freeDeliveryString => freeDelivery(subtotal);
 }

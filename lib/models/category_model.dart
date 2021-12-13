@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
-// ignore_for_file: prefer_const_constructors
 class Category extends Equatable {
   final String name;
   final String imageUrl;

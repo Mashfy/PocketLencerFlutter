@@ -1,21 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pocket_lencer/models/category_model.dart';
 import 'package:pocket_lencer/models/models.dart';
-import 'package:pocket_lencer/screens/home/home_screen.dart';
 import 'package:pocket_lencer/screens/screens.dart';
 
-// ignore_for_file: avoid_print
-// ignore_for_file: no_duplicate_case_values
-// ignore_for_file: prefer_const_constructors
+import '../screens/screens.dart';
+
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
-    print('This is route: ${settings.name}');
-
+    print('Route: ${settings.name}');
     switch (settings.name) {
       case '/':
         return HomeScreen.route();
-
       case HomeScreen.routeName:
         return HomeScreen.route();
       case SplashScreen.routeName:
@@ -24,11 +18,12 @@ class AppRouter {
         return CartScreen.route();
       case ProductScreen.routeName:
         return ProductScreen.route(product: settings.arguments as Product);
-      case WishListScreen.routeName:
-        return WishListScreen.route();
       case CatalogScreen.routeName:
         return CatalogScreen.route(category: settings.arguments as Category);
-
+      case WishlistScreen.routeName:
+        return WishlistScreen.route();
+      case CheckoutScreen.routeName:
+        return CheckoutScreen.route();
       default:
         return _errorRoute();
     }
@@ -36,9 +31,14 @@ class AppRouter {
 
   static Route _errorRoute() {
     return MaterialPageRoute(
-      settings: RouteSettings(name: '/error'),
+      settings: const RouteSettings(name: '/error'),
       builder: (_) => Scaffold(
-        appBar: AppBar(title: Text('Error')),
+        appBar: AppBar(
+          title: const Text('Error'),
+        ),
+        body: const Center(
+          child: Text('Something went wrong!'),
+        ),
       ),
     );
   }

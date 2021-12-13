@@ -1,10 +1,9 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:pocket_lencer/models/cart_model.dart';
-import 'package:pocket_lencer/models/product_model.dart';
-
-// ignore_for_file: prefer_const_constructors
-// ignore_for_file: override_on_non_overriding_member
+import 'package:flutter/material.dart';
+import 'package:pocket_lencer/models/models.dart';
 
 part 'cart_event.dart';
 part 'cart_state.dart';
@@ -28,13 +27,17 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Stream<CartState> _mapCartStartedToState() async* {
     yield CartLoading();
     try {
-      await Future<void>.delayed(Duration(seconds: 1));
-      yield CartLoaded();
-    } catch (_) {}
+      await Future<void>.delayed(const Duration(seconds: 1));
+      yield const CartLoaded();
+    } catch (_) {
+      yield CartError();
+    }
   }
 
   Stream<CartState> _mapCartProductAddedToState(
-      CartProductAdded event, CartState state) async* {
+    CartProductAdded event,
+    CartState state,
+  ) async* {
     if (state is CartLoaded) {
       try {
         yield CartLoaded(
@@ -42,12 +45,16 @@ class CartBloc extends Bloc<CartEvent, CartState> {
             products: List.from(state.cart.products)..add(event.product),
           ),
         );
-      } catch (_) {}
+      } on Exception {
+        yield CartError();
+      }
     }
   }
 
   Stream<CartState> _mapCartProductRemovedToState(
-      CartProductRemoved event, CartState state) async* {
+    CartProductRemoved event,
+    CartState state,
+  ) async* {
     if (state is CartLoaded) {
       try {
         yield CartLoaded(
@@ -55,7 +62,9 @@ class CartBloc extends Bloc<CartEvent, CartState> {
             products: List.from(state.cart.products)..remove(event.product),
           ),
         );
-      } catch (_) {}
+      } on Exception {
+        yield CartError();
+      }
     }
   }
 }
