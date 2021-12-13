@@ -1,5 +1,5 @@
-import 'package:equatable/equatable.dart';
 import 'package:pocket_lencer/models/models.dart';
+import 'package:equatable/equatable.dart';
 
 class Checkout extends Equatable {
   final String? fullName;
