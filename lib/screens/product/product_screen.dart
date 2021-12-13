@@ -70,7 +70,7 @@ class ProductScreen extends StatelessWidget {
                                   .copyWith(color: Colors.white),
                             ),
                             Text(
-                              '\$${product.price}',
+                              'TK${product.price}',
                               style: Theme.of(context)
                                   .textTheme
                                   .headline5!

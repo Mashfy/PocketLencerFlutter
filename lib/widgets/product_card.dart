@@ -77,7 +77,7 @@ class ProductCard extends StatelessWidget {
                                   ),
                         ),
                         Text(
-                          '\$${product.price}',
+                          'TK${product.price}',
                           style:
                               Theme.of(context).textTheme.headline6!.copyWith(
                                     color: Colors.white,

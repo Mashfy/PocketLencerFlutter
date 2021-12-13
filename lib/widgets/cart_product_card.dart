@@ -36,7 +36,7 @@ class CartProductCard extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline5,
                 ),
                 Text(
-                  '\$${product.price}',
+                  'TK${product.price}',
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ],
