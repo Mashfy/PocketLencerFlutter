@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "438429143707",
-    "project_id": "flutter-ecommerce-app-17cd4",
-    "storage_bucket": "flutter-ecommerce-app-17cd4.appspot.com"
+    "project_number": "745913869687",
+    "project_id": "flutter-artsell",
+    "storage_bucket": "flutter-artsell.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:438429143707:android:edee9ac0f294e536e3ac3e",
+        "mobilesdk_app_id": "1:745913869687:android:b80ae438a2ff45913cad72",
         "android_client_info": {
           "package_name": "com.example.flutter_application_1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "438429143707-kqq9pa4lq8l5too5e0t7cgl136mv1jfk.apps.googleusercontent.com",
+          "client_id": "745913869687-fq2ebc9bn6lvo292g89lpsu68ckrl7v1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQx43rSgT-8609SP8QnOtFa_KW1lznmI8"
+          "current_key": "AIzaSyCbhKH14_lnhSq73731XHXkfswPV6ubt-M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "438429143707-kqq9pa4lq8l5too5e0t7cgl136mv1jfk.apps.googleusercontent.com",
+              "client_id": "745913869687-fq2ebc9bn6lvo292g89lpsu68ckrl7v1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

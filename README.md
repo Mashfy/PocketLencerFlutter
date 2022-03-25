@@ -11,7 +11,7 @@ I have great interests in digital art and illustrations.See this [repo](https://
 <!-- ![App Preview](https://github.com/Mashfy/PocketLencerFlutter/blob/main/assets/images/Screenshot_1639408843.png?raw=true) -->
 <br/>
 
-## Features Implemented
+## Some Features Implemented
 
 <ul>
 <li>A Responsive UI for Users</li>
