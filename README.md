@@ -4,6 +4,13 @@
 
 <br/>
 
+
+# presentation video link of my app:
+Click over the photo to see the application presentation
+<br/>
+
+### [<img src="staticImg/thumbnail.png" width="800" />](https://drive.google.com/file/d/1PIwvJY2VZhYacXuZt3XRGXFPxhXbiC0u/view?usp=sharing)
+
 ## Motivation
 
 I have great interests in digital art and illustrations.See this [repo](https://github.com/Mashfy/Graphics-Design.git) to see some samples of my artworks. So, I wanted to create my own mobile app which will showcase my artworks to interested people.
@@ -32,10 +39,6 @@ I have great interests in digital art and illustrations.See this [repo](https://
 <li>Database: <b>Firebase</b></li>
 </ul>
 <br/>
-
-# presentation video link of my app:
-
-### [POCKET LENCER presentation](https://drive.google.com/file/d/1PIwvJY2VZhYacXuZt3XRGXFPxhXbiC0u/view?usp=sharing)
 
 <br/>
 
